@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Auto Deploy</title>
+</head>
+<body>
+    <h1>Auto-Deploy Project</h1>
+    <p>Backend Status: <span id="status">Loading...</span></p>
+    <script>
+        fetch('http://127.0.0.1:8000/')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('status').textContent = data.message;
+            });
+    </script>
+</body>
+</html>
